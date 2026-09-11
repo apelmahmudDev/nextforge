@@ -1,7 +1,12 @@
 import { ApiError } from "@/lib/api/errors"
+import { env } from "@/lib/env/client"
 
 type ApiRequestOptions = RequestInit & {
   accessToken?: never
+}
+
+function apiUrl(path: string) {
+  return new URL(path, env.NEXT_PUBLIC_API_BASE_URL).toString()
 }
 
 async function apiRequest<T>(path: string, options: ApiRequestOptions = {}) {
@@ -29,5 +34,5 @@ async function apiRequest<T>(path: string, options: ApiRequestOptions = {}) {
   return body as T
 }
 
-export { apiRequest }
+export { apiRequest, apiUrl }
 export type { ApiRequestOptions }

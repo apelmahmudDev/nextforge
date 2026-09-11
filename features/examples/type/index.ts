@@ -1,14 +1,11 @@
-type Post = {
-  id: number
-  title: string
-  body: string
+type ProductResponse = {
+  products: unknown[]
+  total: number
+  skip: number
+  limit: number
 }
 
-type Todo = {
-  id: number
-  title: string
-  completed: boolean
-}
+type CategoryList = string[]
 
 type User = {
   id: number
@@ -17,4 +14,11 @@ type User = {
   company: { name: string }
 }
 
-export type { Post, Todo, User }
+type UserResponse = {
+  users: User[]
+  total: number
+  skip: number
+  limit: number
+}
+
+export type { CategoryList, ProductResponse, UserResponse }

@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server"
 
+const API_BASE_URL = "https://dummyjson.com"
+
 const resourcePaths = {
-  posts: "posts",
-  todos: "todos",
+  products: "products",
+  "category-list": "products/category-list",
   users: "users",
 } as const
 
@@ -19,12 +21,9 @@ export async function GET(
   }
 
   const endpoint = resourcePaths[resource as Resource]
-  const response = await fetch(
-    `https://jsonplaceholder.typicode.com/${endpoint}`,
-    {
-      next: { revalidate: 60 },
-    }
-  )
+  const response = await fetch(`${API_BASE_URL}/${endpoint}`, {
+    next: { revalidate: 60 },
+  })
 
   if (!response.ok) {
     return NextResponse.json(

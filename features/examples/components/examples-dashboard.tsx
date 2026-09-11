@@ -4,8 +4,8 @@ import { useQuery } from "@tanstack/react-query"
 import Link from "next/link"
 
 import {
-  postsQuery,
-  todosQuery,
+  categoriesQuery,
+  productsQuery,
   usersQuery,
 } from "@/features/examples/data/queries"
 
@@ -38,8 +38,8 @@ function SourcePath({ children }: { children: string }) {
 }
 
 export function ExamplesDashboard() {
-  const posts = useQuery(postsQuery())
-  const todos = useQuery(todosQuery())
+  const products = useQuery(productsQuery())
+  const categories = useQuery(categoriesQuery())
   const users = useQuery(usersQuery())
 
   return (
@@ -71,14 +71,19 @@ export function ExamplesDashboard() {
         <section className="grid gap-4 md:grid-cols-3">
           <article className="border border-t-2 border-border border-t-primary bg-background p-5 shadow-sm">
             <div className="flex items-center justify-between gap-3">
-              <h2 className="font-medium">Posts</h2>
+              <h2 className="font-medium">Products</h2>
               <span className="font-mono text-xs text-muted-foreground">
                 01
               </span>
             </div>
-            <QueryState isPending={posts.isPending} isError={posts.isError} />
-            {posts.data && (
-              <p className="mt-4 text-3xl font-semibold">{posts.data.length}</p>
+            <QueryState
+              isPending={products.isPending}
+              isError={products.isError}
+            />
+            {products.data && (
+              <p className="mt-4 text-3xl font-semibold">
+                {products.data.total}
+              </p>
             )}
             <p className="mt-1 text-xs text-muted-foreground">
               Parallel collection query, cached for 1 minute
@@ -95,7 +100,9 @@ export function ExamplesDashboard() {
             </div>
             <QueryState isPending={users.isPending} isError={users.isError} />
             {users.data && (
-              <p className="mt-4 text-3xl font-semibold">{users.data.length}</p>
+              <p className="mt-4 text-3xl font-semibold">
+                {users.data.users.length}
+              </p>
             )}
             <p className="mt-1 text-xs text-muted-foreground">
               Longer-lived reference data, cached for 5 minutes
@@ -105,15 +112,18 @@ export function ExamplesDashboard() {
 
           <article className="border border-t-2 border-border border-t-[#c27a50] bg-background p-5 shadow-sm">
             <div className="flex items-center justify-between gap-3">
-              <h2 className="font-medium">Todos</h2>
+              <h2 className="font-medium">Categories</h2>
               <span className="font-mono text-xs text-muted-foreground">
                 03
               </span>
             </div>
-            <QueryState isPending={todos.isPending} isError={todos.isError} />
-            {todos.data && (
+            <QueryState
+              isPending={categories.isPending}
+              isError={categories.isError}
+            />
+            {categories.data && (
               <p className="mt-4 text-3xl font-semibold">
-                {todos.data.filter((todo) => todo.completed).length}
+                {categories.data.length}
               </p>
             )}
             <p className="mt-1 text-xs text-muted-foreground">

@@ -1,34 +1,38 @@
 import { queryOptions } from "@tanstack/react-query"
 
-import { apiRequest } from "@/lib/api/client"
-import type { Post, Todo, User } from "@/features/examples/type"
+import { apiRequest, apiUrl } from "@/lib/api/client"
+import type {
+  CategoryList,
+  ProductResponse,
+  UserResponse,
+} from "@/features/examples/type"
 
 const exampleKeys = {
   all: ["examples"] as const,
-  posts: () => [...exampleKeys.all, "posts"] as const,
-  todos: () => [...exampleKeys.all, "todos"] as const,
+  products: () => [...exampleKeys.all, "products"] as const,
+  categories: () => [...exampleKeys.all, "categories"] as const,
   users: () => [...exampleKeys.all, "users"] as const,
 }
 
-const postsQuery = () =>
+const productsQuery = () =>
   queryOptions({
-    queryKey: exampleKeys.posts(),
-    queryFn: () => apiRequest<Post[]>("/api/examples/posts"),
+    queryKey: exampleKeys.products(),
+    queryFn: () => apiRequest<ProductResponse>(apiUrl("/products")),
     staleTime: 60 * 1000,
   })
 
-const todosQuery = () =>
+const categoriesQuery = () =>
   queryOptions({
-    queryKey: exampleKeys.todos(),
-    queryFn: () => apiRequest<Todo[]>("/api/examples/todos"),
+    queryKey: exampleKeys.categories(),
+    queryFn: () => apiRequest<CategoryList>(apiUrl("/products/category-list")),
     staleTime: 60 * 1000,
   })
 
 const usersQuery = () =>
   queryOptions({
     queryKey: exampleKeys.users(),
-    queryFn: () => apiRequest<User[]>("/api/examples/users"),
+    queryFn: () => apiRequest<UserResponse>(apiUrl("/users")),
     staleTime: 5 * 60 * 1000,
   })
 
-export { exampleKeys, postsQuery, todosQuery, usersQuery }
+export { categoriesQuery, exampleKeys, productsQuery, usersQuery }
