@@ -1,0 +1,15 @@
+---
+description: Shared NextForge engineering rules
+alwaysApply: true
+---
+
+Read `AGENTS.md` before changing code. `CLAUDE.md` and `.github/copilot-instructions.md` mirror the same project contract for other agents.
+
+- Use the existing Next.js App Router, strict TypeScript, and feature-based structure.
+- Keep route handlers thin; put reusable infrastructure in `lib/` and domain behavior in `features/<domain>/`.
+- Keep server-only code and secrets out of client components.
+- Reuse existing API clients, auth session helpers, query patterns, and UI components.
+- Do not introduce a new library or abstraction when an existing local pattern solves the problem.
+- For behavior changes, add or update focused tests when the repository has a test harness.
+- Validate changes with `pnpm lint`, `pnpm typecheck`, and `pnpm build`.
+- Never edit files or execute commands on behalf of a user without explicit approval.
