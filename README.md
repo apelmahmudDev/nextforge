@@ -159,4 +159,4 @@ AI-assisted changes should follow the same engineering rules as human changes:
 
 ## License
 
-This project is private and intended to be used as an application starter. Add a project license before publishing a derived application publicly.
+NextForge is a public frontend starter template. The repository does not currently include a `LICENSE` file, so add or choose an appropriate license before redistributing this template or publishing derived work.
