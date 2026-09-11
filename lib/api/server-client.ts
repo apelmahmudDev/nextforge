@@ -1,7 +1,8 @@
 import "server-only"
 
-import { getAccessToken } from "@/lib/auth/session"
 import { ApiError } from "@/lib/api/errors"
+import { getAccessToken } from "@/lib/auth/session"
+import { env } from "@/lib/env/server"
 
 type ServerApiRequestOptions = RequestInit
 
@@ -9,12 +10,6 @@ async function serverApiRequest<T>(
   path: string,
   options: ServerApiRequestOptions = {}
 ) {
-  const apiBaseUrl = process.env.API_BASE_URL
-
-  if (!apiBaseUrl) {
-    throw new Error("API_BASE_URL is not configured")
-  }
-
   const headers = new Headers(options.headers)
   const accessToken = await getAccessToken()
 
@@ -28,7 +23,7 @@ async function serverApiRequest<T>(
 
   headers.set("x-request-id", crypto.randomUUID())
 
-  const response = await fetch(new URL(path, apiBaseUrl), {
+  const response = await fetch(new URL(path, env.API_BASE_URL), {
     ...options,
     headers,
   })

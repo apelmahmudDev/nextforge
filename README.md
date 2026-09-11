@@ -2,6 +2,11 @@
 
 This is a Next.js template with shadcn/ui.
 
+## Environment variables
+
+Copy `.env.example` to `.env.local` and set `API_BASE_URL` to the backend API URL.
+Environment variables are validated when the server starts.
+
 ## Adding components
 
 To add components to your app, run the following command:
