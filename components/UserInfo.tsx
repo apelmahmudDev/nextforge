@@ -1,6 +1,5 @@
 import React from "react"
 
-export        default function UserInfo() {
-const name = 
-        return <div>UserInfo</div>
+export default function UserInfo() {
+  return <div>UserInfo</div>
 }
