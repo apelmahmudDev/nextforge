@@ -1,7 +1,7 @@
 import { queryOptions } from "@tanstack/react-query"
 
 import { apiRequest } from "@/lib/api/client"
-import type { Post, Todo, User } from "@/lib/examples/types"
+import type { Post, Todo, User } from "@/features/examples/type"
 
 const exampleKeys = {
   all: ["examples"] as const,

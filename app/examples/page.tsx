@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 
-import { ExamplesDashboard } from "@/components/examples-dashboard"
+import { ExamplesDashboard } from "@/features/examples/components/examples-dashboard"
 
 export const metadata: Metadata = {
   title: "TanStack Query Lab | NextForge",

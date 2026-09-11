@@ -3,7 +3,11 @@
 import { useQuery } from "@tanstack/react-query"
 import Link from "next/link"
 
-import { postsQuery, todosQuery, usersQuery } from "@/lib/examples/queries"
+import {
+  postsQuery,
+  todosQuery,
+  usersQuery,
+} from "@/features/examples/data/queries"
 
 function QueryState({
   isPending,
@@ -79,7 +83,7 @@ export function ExamplesDashboard() {
             <p className="mt-1 text-xs text-muted-foreground">
               Parallel collection query, cached for 1 minute
             </p>
-            <SourcePath>lib/examples/queries.ts</SourcePath>
+            <SourcePath>features/examples/data/queries.ts</SourcePath>
           </article>
 
           <article className="border border-t-2 border-border border-t-[#6c9a7b] bg-background p-5 shadow-sm">
@@ -96,7 +100,7 @@ export function ExamplesDashboard() {
             <p className="mt-1 text-xs text-muted-foreground">
               Longer-lived reference data, cached for 5 minutes
             </p>
-            <SourcePath>lib/examples/types.ts</SourcePath>
+            <SourcePath>features/examples/types/types.ts</SourcePath>
           </article>
 
           <article className="border border-t-2 border-border border-t-[#c27a50] bg-background p-5 shadow-sm">
@@ -115,7 +119,9 @@ export function ExamplesDashboard() {
             <p className="mt-1 text-xs text-muted-foreground">
               Derived UI value from fetched server state
             </p>
-            <SourcePath>components/examples-dashboard.tsx</SourcePath>
+            <SourcePath>
+              features/examples/components/examples-dashboard.tsx
+            </SourcePath>
           </article>
         </section>
 
@@ -129,13 +135,13 @@ export function ExamplesDashboard() {
             </h2>
             <p className="mt-3 max-w-sm text-sm leading-6 text-muted-foreground">
               Keep the page focused on composition. Query keys, cache policy,
-              and API calls stay in the shared examples module.
+              and API calls stay in the examples feature.
             </p>
           </div>
           <div className="grid gap-px border border-border bg-border sm:grid-cols-3">
             {[
-              ["01", "Query options", "lib/examples/queries.ts"],
-              ["02", "Typed boundary", "lib/examples/types.ts"],
+              ["01", "Query options", "features/examples/data/queries.ts"],
+              ["02", "Typed boundary", "features/examples/types/types.ts"],
               ["03", "Route handler", "app/api/examples/[resource]/route.ts"],
             ].map(([number, title, path]) => (
               <div className="bg-muted/40 p-5" key={number}>
