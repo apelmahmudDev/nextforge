@@ -1,6 +1,6 @@
 import { queryOptions } from "@tanstack/react-query"
 
-import { apiRequest, apiUrl } from "@/lib/api/client"
+import { apiRequest } from "@/lib/api/client"
 import type {
   CategoryList,
   ProductResponse,
@@ -17,21 +17,22 @@ const exampleKeys = {
 const productsQuery = () =>
   queryOptions({
     queryKey: exampleKeys.products(),
-    queryFn: () => apiRequest<ProductResponse>(apiUrl("/products")),
+    queryFn: () => apiRequest<ProductResponse>("/api/backend/products"),
     staleTime: 60 * 1000,
   })
 
 const categoriesQuery = () =>
   queryOptions({
     queryKey: exampleKeys.categories(),
-    queryFn: () => apiRequest<CategoryList>(apiUrl("/products/category-list")),
+    queryFn: () =>
+      apiRequest<CategoryList>("/api/backend/products/category-list"),
     staleTime: 60 * 1000,
   })
 
 const usersQuery = () =>
   queryOptions({
     queryKey: exampleKeys.users(),
-    queryFn: () => apiRequest<UserResponse>(apiUrl("/users")),
+    queryFn: () => apiRequest<UserResponse>("/api/backend/users"),
     staleTime: 5 * 60 * 1000,
   })
 

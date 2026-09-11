@@ -24,6 +24,10 @@ async function getAccessToken() {
   return (await cookies()).get(accessTokenCookie)?.value
 }
 
+async function getRefreshToken() {
+  return (await cookies()).get(refreshTokenCookie)?.value
+}
+
 async function setAuthTokens(tokens: AuthTokens) {
   const cookieStore = await cookies()
 
@@ -48,6 +52,7 @@ export {
   accessTokenCookie,
   clearAuthTokens,
   getAccessToken,
+  getRefreshToken,
   refreshTokenCookie,
   setAuthTokens,
 }
