@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192"><rect width="192" height="192" rx="40" fill="#0b0f14"/><path fill="#7dd3fc" d="M48 48h96v24H72v24h48v24H72v24h72v24H48z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" role="img" aria-labelledby="title desc">
+	<title id="title">NextForge logo</title>
+	<desc id="desc">A stylized N built from glowing teal beams with an orange forge spark.</desc>
+	<rect width="192" height="192" rx="42" fill="#10100f"/>
+	<rect x="11" y="11" width="170" height="170" rx="33" fill="none" stroke="#3e3c37" stroke-width="3"/>
+	<path d="M47 139V53h23l51 54V53h24v86h-24l-51-54v54z" fill="#7dd3fc"/>
+	<path d="m139 34 5 13 13 5-13 5-5 13-5-13-13-5 13-5z" fill="#e9824b"/>
+	<path d="m42 151 3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill="#e9824b" opacity=".9"/>
+</svg>

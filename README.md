@@ -1,6 +1,16 @@
+<div align="center">
+  <img src="public/icon-512.svg" alt="NextForge logo" width="96" height="96" />
+</div>
+
 # NextForge
 
-> A production-minded frontend foundation for teams building a separate web application around an existing or future backend.
+A production-minded frontend foundation for teams building a separate web application around an existing or future backend.
+
+[![GitHub](https://img.shields.io/badge/GITHUB-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/apelmahmudDev/nextforge) [![View source](https://img.shields.io/badge/VIEW%20SOURCE-079b91?style=for-the-badge&logo=github&logoColor=white)](https://github.com/apelmahmudDev/nextforge)
+
+---
+
+## Overview
 
 NextForge gives a new product a clear structure before the codebase becomes difficult to change. It is intentionally frontend-focused: connect it to any backend, keep domain code organized, and scale without introducing monorepo overhead on day one.
 
