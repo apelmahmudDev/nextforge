@@ -31,6 +31,12 @@ export default function Page() {
             <a className="transition-colors hover:text-[#f4f0e7]" href="#start">
               Get started
             </a>
+            <a
+              className="text-[#e9824b] transition-colors hover:text-[#f4f0e7]"
+              href="/examples"
+            >
+              Query Lab -&gt;
+            </a>
           </div>
           <a
             className="border border-[#4c4a43] px-3 py-2 text-xs font-semibold text-[#f4f0e7] transition-colors hover:border-[#e9824b] hover:text-[#e9824b]"
