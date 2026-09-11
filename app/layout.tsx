@@ -1,4 +1,5 @@
 import { Geist_Mono, Outfit, Oxanium } from "next/font/google"
+import type { Metadata } from "next"
 
 import "./globals.css"
 import { QueryProvider } from "@/components/query-provider"
@@ -17,6 +18,12 @@ const fontMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
 })
+
+export const metadata: Metadata = {
+  title: "NextForge | Frontend foundation for products that scale",
+  description:
+    "A production-minded Next.js starter for building a separate frontend around any backend.",
+}
 
 export default function RootLayout({
   children,

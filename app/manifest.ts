@@ -4,7 +4,8 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "NextForge",
     short_name: "NextForge",
-    description: "A Next.js application",
+    description:
+      "A production-minded Next.js starter for building a separate frontend around any backend.",
     start_url: "/",
     display: "standalone",
     background_color: "#0b0f14",
