@@ -38,7 +38,8 @@ function AuthenticatedUser({ user }: { user: AuthUser }) {
   const logoutMutation = useMutation({
     mutationFn: logout,
     onSuccess: () => {
-      queryClient.removeQueries({ queryKey: authKeys.me() })
+      queryClient.setQueryData(authKeys.me(), null)
+      queryClient.removeQueries({ queryKey: authKeys.me(), exact: true })
     },
   })
 
